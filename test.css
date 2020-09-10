@@ -1,0 +1,95 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body{
+  margin:0 auto;
+
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+    "header header header" 200px
+    "left   center right" 1fr
+    "footer footer footer" 200px
+     / 150px 1fr 200px;
+   }
+
+header{
+  grid-area: header;
+  width: 100%;
+}
+.header-nav{
+  list-style: none;
+  float: left;
+}
+.header-nav li{
+  float: left;
+  padding:20px 15px 0 15px;
+}
+.side-nav{
+grid-area: left;
+list-style: none;
+font-size: 10px;
+color: white;
+text-decoration: inherit;
+background-color: black;
+padding-top:10px;
+padding-left:10px;
+  }
+.side-nav li{
+  padding-top:10px;
+  padding-left:10px;
+}
+main{
+grid-area: center;
+}
+aside{
+grid-area: right;
+}
+footer{
+  grid-area: footer;
+}
+
+@media(max-width:670px){
+  body{
+
+    grid-template:
+    "header" 150px
+    "center" 400px
+    "left"
+    "right"
+    "footer" 200px;
+  }
+  header{
+    grid-area:header;
+  }
+  main{
+    grid-area:center;
+  }
+  .side-nav{
+    grid-area:left;
+  }
+  aside{
+    grid-area:right;
+  }
+  footer{
+    grid-area:footer;
+  }
+}
